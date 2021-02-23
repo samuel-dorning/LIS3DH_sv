@@ -1,17 +1,17 @@
 module spi(
-	input logic clk,
+	input logic clk, //10MHz clk
 	input logic reset_n,
 
-	input logic [23:0] data_tx,
-	input logic data_tx_valid,
+	input logic [23:0] data_tx, //data to transmit to LIS3DH
+	input logic data_tx_valid,	//data in data_tx is valid
 
-	input logic sdo,
+	input logic sdo,	//data from LIS3DH
 
-	output logic done,	
-	output logic [15:0] data_rx,
-	output logic cs,
-	output logic spc,
-	output logic sdi
+	output logic done,	//Rx/Tx is complete
+	output logic [15:0] data_rx, //Data received from LIS3DH
+	output logic cs,	//Active low chip enable
+	output logic spc,	//10MHz SPI clk
+	output logic sdi	//data to LIS3DH
 );
 
 logic clk_en;
@@ -33,6 +33,7 @@ enum logic [2:0]{
 	RCV_DATA	= 3'b011
 } rps, rns;
 
+//WRITE DATA LOGIC:
 
 always_ff @ (negedge clk) begin
 	if(ps == INIT) begin

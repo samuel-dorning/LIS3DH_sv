@@ -1,14 +1,14 @@
 module accelerometer(
-	input logic clk,
+	input logic clk, //10MHz clk
 	input logic reset_n,
-	input logic sdo,
+	input logic sdo, //data from LIS3DH
 
 	output logic [15:0] x,
 	output logic [15:0] y,
 	output logic [15:0] z,
-	output logic cs,
-	output logic spc,
-	output logic sdi
+	output logic cs, 	//Active low chip enable
+	output logic spc,	//10MHz SPI clk
+	output logic sdi	//data to LIS3DH
 
 );
 
@@ -35,7 +35,10 @@ always_ff @ (posedge clk) begin
 	if(ps == INIT)
 		counter <= 0;
 	else if(ps == WRITE) begin
-		data_tx <= {2'b00,6'h20,8'b10010111,8'hFFFF};
+		data_tx <= {2'b00,6'h20,8'b10010111,8'hFF};	//2'b00 - write mode, unchanged addr 
+														//6'h20 - CTRL_REG1 addr
+														//8'b10010111 - high freq. mode, low power mode disabled, all axes enabled
+														//8'hFF - offset
 		if(counter == 0)
 			data_tx_valid <= 1;
 		else
@@ -50,7 +53,9 @@ always_ff @ (posedge clk) begin
 			data_tx_valid <= 1;
 		else
 			data_tx_valid <= 0;
-		data_tx <= {2'b11,6'h28,16'hFFFF};
+		data_tx <= {2'b11,6'h28,16'hFFFF};	//2'b11 - read mode, increment address
+											//6'h28 - x addr
+											//16'hFFFF - offset
 		counter <= counter + 1;
 	end
 	else if(ps == STO_X) begin
@@ -62,7 +67,10 @@ always_ff @ (posedge clk) begin
 			data_tx_valid <= 1;
 		else
 			data_tx_valid <= 0;
-		data_tx <= {2'b11,6'h2A,16'hFFFF};
+		data_tx <= {2'b11,6'h2A,16'hFFFF};	//2'b11 - read mode, increment address
+											//6'h2A - y addr
+											//16'hFFFF - offset
+
 		counter <= counter + 1;
 	end
 	else if(ps == STO_Y) begin
@@ -74,7 +82,9 @@ always_ff @ (posedge clk) begin
 			data_tx_valid <= 1;
 		else
 			data_tx_valid <= 0;
-		data_tx <= {2'b11,6'h2C,16'hFFFF};
+		data_tx <= {2'b11,6'h2C,16'hFFFF};	//2'b11 - read mode, increment address
+											//6'h2C - z addr
+											//16'hFFFF - offset
 		counter <= counter + 1;
 	end
 	else if(ps == STO_Z) begin
