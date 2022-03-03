@@ -1,0 +1,12 @@
+# vsim work.tb -t ns
+# vsim work.tb -t ns 
+# Start time: 15:41:12 on Feb 22,2021
+# Loading sv_std.std
+# Loading work.tb
+#  add wave *
+#  run -all
+# ** Note: $stop    : ./rtl/tb.sv(17)
+#    Time: 100 ns  Iteration: 0  Instance: /tb
+# Break in Module tb at ./rtl/tb.sv line 17
+# End time: 15:41:54 on Feb 22,2021, Elapsed time: 0:00:42
+# Errors: 0, Warnings: 0

@@ -1,0 +1,131 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dornings/quartus_projects/accelerometer
+vaccelerometer
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1614036330
+!i10b 1
+!s100 R^;XiDiME??W42kROYIUR1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IIFBm8idESS1Qla`clI:7;0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1614036321
+8./rtl/accelerometer.sv
+F./rtl/accelerometer.sv
+!i122 125
+L0 1 146
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1614036330.000000
+Z7 !s107 ./rtl/spi.sv|./rtl/accelerometer.sv|./rtl/tb_accelerometer.sv|
+Z8 !s90 ./rtl/tb_accelerometer.sv|./rtl/accelerometer.sv|./rtl/spi.sv|
+!i113 1
+Z9 tCvgOpt 0
+vspi
+R1
+R2
+!i10b 1
+!s100 _J:9e449K7PII?_ZLgaZT2
+R3
+IZkiLG^[94W@;^EoP:h^c@2
+R4
+S1
+R0
+w1613952946
+8./rtl/spi.sv
+F./rtl/spi.sv
+!i122 125
+L0 1 159
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vtb
+R1
+!s110 1614037270
+!i10b 1
+!s100 ndKaO<cRI<[7`JGzVgBAV1
+R3
+IESAj`X]^_W1L4dLeig7TH3
+R4
+S1
+R0
+w1614037263
+8./rtl/tb.sv
+F./rtl/tb.sv
+!i122 127
+L0 2 31
+R5
+r1
+!s85 0
+31
+!s108 1614037270.000000
+!s107 ./rtl/tb.sv|
+!s90 ./rtl/tb.sv|
+!i113 1
+R9
+vtb_accelerometer
+R1
+R2
+!i10b 1
+!s100 bCZhOH9nBF_Qd=zP1gj>k3
+R3
+IN=EXKYSYR2:0L]AAjWYEM3
+R4
+S1
+R0
+w1613953801
+8./rtl/tb_accelerometer.sv
+F./rtl/tb_accelerometer.sv
+!i122 125
+L0 2 124
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vtb_spi
+R1
+!s110 1613950297
+!i10b 1
+!s100 ]OR3fi]OlBLXETD6HAIF;0
+R3
+I9IIEElb7^O]IOA^JaI`bL1
+R4
+S1
+R0
+w1613949833
+8./rtl/tb_spi.sv
+F./rtl/tb_spi.sv
+!i122 94
+L0 2 90
+R5
+r1
+!s85 0
+31
+!s108 1613950297.000000
+!s107 ./rtl/spi.sv|./rtl/tb_spi.sv|
+!s90 ./rtl/tb_spi.sv|./rtl/spi.sv|
+!i113 1
+R9
